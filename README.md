@@ -63,13 +63,14 @@ c.mvn test-to check if the application is converted to machine readable
 d.mvn package- it will build the application and convert into WAR or JAR file.
 
 note: 
+
       1.the errors we get while building the application is plugins and versions hence we have to update the plugins and versions
 
       2.after building the application it will create a directory called "target" inside ot will create WAR OR JAR FILE.
 
 6.INSTALL APACHE TOMCAT TO DEPLOY OR HOST JAVA BASED APPLICATIONS:
 
-a.to install tomcat to the ec2 instance use - wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz(tomcat 9 version)
+a.to install tomcat to the ec2 instance use - wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz  (tomcat 9 version)
 
 b.after installing the tomcat we have to unzip the file so use- tar -xvf  apache-tomcat-9.0.96.tar.gz
 
