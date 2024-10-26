@@ -40,15 +40,23 @@ open your instance and connect using SSH client:
 
 3.INSTALL JAVA,MAVEN AND GIT in your AWS EC2 INSTANCE:
 -------------------------------------------------------------------------------------------------------------------------------
-a.sudo yum -y install java-11* (supports java based applications)
+a.install java by giving:- 
 
-b.sudo yum -y install maven  (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file)
+          sudo yum -y install java-11*
+
+to check java version:
+
+          java --version
+
+b.install maven (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file):-
+
+         sudo yum -y install maven
 
 to check maven version:
 
            mvn -v
 
-c.sudo yum - y install git (to clone pre -existing application:
+c.sudo yum - y install git (to clone pre -existing application or to use git based commands in the instance):
 
          "git clone https://github.com/username/yourrepository.git")
 
@@ -105,7 +113,7 @@ note:use public ip adress of the instance to open the tomcat page:-
 
 
 8.Configuration:
-
+--------------------------------------------------------------------------------------------------------------------------
 a.Ensure the necessary configurations are set in your application
 
 b.Modify context.xml in Tomcat if you need to change the default settings
