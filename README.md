@@ -22,7 +22,7 @@ a.Log in to your AWS Management Console.
 
 b.Navigate to the EC2 dashboard and click on "Launch Instance."
 
-c.Choose an Amazon Machine Image (AMI). (e.g., Amazon Linux, Ubuntu Server)
+c.Choose an Amazon Machine Image (AMI). (e.g., Amazon Linux)
 
 d.Select an instance type (e.g., t2.micro for free tier).
 
@@ -116,9 +116,29 @@ note:use public ip adress of the instance to open the tomcat page:-
 --------------------------------------------------------------------------------------------------------------------------
 a.Ensure the necessary configurations are set in your application
 
-b.Modify context.xml in Tomcat if you need to change the default settings
+b.Modify context.xml in Tomcat if you need to change the default settings 
 
-c.edit the manager and host manager to deploy or host application(give permissions)
+c.edit the manager and host manager to deploy or host java based application(give permissions):-
+
+            sudo vi /home/ec2-user/apache-tomcat-9.0.96/webapps/host-manager/META-INF/context.xml
+
+            sudo vi /home/ec2-user/apache-tomcat-9.0.96/webapps/manager/META-INF/context.xml
+
+d.after giving permsions go to the bin folder and restart the tomcat server.
+
+e.by opening the tomcat server we have to edit conf/tomcat-users.xml and give user permissions 
+ 
+  so go to the user conf folder and edit tomcat-users.xml :-
+
+             sudo vi tomcat-users.xml
+
+  in that give manager gui permsisions:-
+
+                    <role rolename="manager-gui"/>
+           <user username="tomcat" password="abhilash" roles="manager-gui"/>
+   
+
+           
 
 
 
