@@ -75,7 +75,7 @@ b.after installing the tomcat we have to unzip the file so use- tar -xvf  apache
 go to the tomcat in the tomcat we have lot of files and floders so go to the bin folder and start the server- ./startup.sh
 
 Configure security group settings to allow inbound traffic on port 8080(tomcat port number) (HTTP).
-
+----------------------------------------------------------------------------------------------
 note:use public ip adress of the instance to open the tomcat page- https://3.27.90.92:8080
 
 
