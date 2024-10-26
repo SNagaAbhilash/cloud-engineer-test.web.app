@@ -13,7 +13,7 @@ Before you begin, ensure you have the following:
 
 Deployment Steps:
 
-1. Launch an EC2 Instance
+1.LAUNCH AN EC2 INSTANCE
    
 a.Log in to your AWS Management Console.
 
@@ -27,6 +27,19 @@ e.Configure security group settings to allow inbound traffic on port 80 (HTTP).
 
 f.Launch the instance and download the key pair for SSH access.
 
+
+2.CONNECT TO EC2 INSTANCE:
+
+open your instance and connect using SSH client: ssh -i "web.pem" ec2-user@ec2-3-27-90-92.ap-southeast-2.compute.amazonaws.com
+
+
+3.INSTALL JAVA,MAVEN AND GIT:
+
+sudo yum -y install java-11*(supports java based applications)
+
+sudo yum -y install maven (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data)
+
+sudo yum - y install git( to clone pre -existing application- "git clone your rep name.git")
 
 
 
