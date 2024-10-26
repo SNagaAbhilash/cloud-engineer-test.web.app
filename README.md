@@ -5,7 +5,9 @@ INTRODUCTION:This project is a simple Java web calculator application that can p
 Prerequisites
 Before you begin, ensure you have the following:
 1.Any aws account
+
 2.Java Development Kit (JDK) installed locally in the server(supports java based applications)
+
 3.Apache Maven installed locally (for building the project)
 
 Deployment Steps:
