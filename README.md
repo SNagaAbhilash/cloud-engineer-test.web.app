@@ -35,11 +35,27 @@ open your instance and connect using SSH client: ssh -i "web.pem" ec2-user@ec2-3
 
 3.INSTALL JAVA,MAVEN AND GIT:
 
-sudo yum -y install java-11*(supports java based applications)
+a.sudo yum -y install java-11* (supports java based applications)
 
-sudo yum -y install maven (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data)
+b.sudo yum -y install maven  (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file)
 
-sudo yum - y install git( to clone pre -existing application- "git clone your rep name.git")
+c.sudo yum - y install git (to clone pre -existing application- "git clone https://github.com/username/your repository.git")
+
+
+4.GO THE DIRECTORY:
+
+a. cd directoryname
+
+
+5.BUILD THE APPLICATION USING THE MAVEN LIFE CYCLE:
+
+a. mvn validate- it will validate the web application if pom.xml is present or not
+
+b.mvn compile- it will convert human readable to machine readable 
+
+c.mvn test-to check if the application is converted to machine readable
+
+d.mvn package- it will build the application and convert into WAR or JAR file
 
 
 
