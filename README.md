@@ -33,7 +33,9 @@ f.Launch the instance and download the key pair for SSH access.
 
 2.CONNECT TO EC2 INSTANCE:
 --------------------------------------------------------------------------------------------------------------------------------
-open your instance and connect using SSH client: ssh -i "web.pem" ec2-user@ec2-3-27-90-92.ap-southeast-2.compute.amazonaws.com
+open your instance and connect using SSH client:
+                    
+       ssh -i "web.pem" ec2-user@ec2-3-27-90-92.ap-southeast-2.compute.amazonaws.com
 
 
 3.INSTALL JAVA,MAVEN AND GIT in your AWS EC2 INSTANCE:
