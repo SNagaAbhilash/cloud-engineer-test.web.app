@@ -39,7 +39,9 @@ a.sudo yum -y install java-11* (supports java based applications)
 
 b.sudo yum -y install maven  (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file)
 
-c.sudo yum - y install git (to clone pre -existing application- "git clone https://github.com/username/your repository.git")
+to check maven version-  mvn -v
+
+c.sudo yum - y install git (to clone pre -existing application- "git clone https://github.com/username/yourrepository.git")
 
 
 4.GO THE DIRECTORY:
@@ -49,13 +51,40 @@ a. cd directoryname
 
 5.BUILD THE APPLICATION USING THE MAVEN LIFE CYCLE:
 
-a. mvn validate- it will validate the web application if pom.xml is present or not
+a. mvn validate- it will validate the the language is compatable to build with maven or not
 
 b.mvn compile- it will convert human readable to machine readable 
 
 c.mvn test-to check if the application is converted to machine readable
 
-d.mvn package- it will build the application and convert into WAR or JAR file
+d.mvn package- it will build the application and convert into WAR or JAR file.
+
+note: 1.the errors we get while building the application is plugins and versions hence we have to update the plugins and versions---------
+
+      2.after building the application it will create a directory called "target" inside ot will create WAR OR JAR FILE.
+
+6.INSTALL APACHE TOMCAT TO DEPLOY OR HOST JAVA BASED APPLICATIONS:
+
+a.to install tomcat to the ec2 instance use - wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz(tomcat 9 version)
+
+b.after installing the tomcat we have to unzip the file so use- tar -xvf  apache-tomcat-9.0.96.tar.gz
+
+
+7.START THE TOMCAT SERVER:
+
+go to the tomcat in the tomcat we have lot of files and floders so go to the bin folder and start the server- ./startup.sh
+
+Configure security group settings to allow inbound traffic on port 8080(tomcat port number) (HTTP).
+
+
+8.Configuration:
+
+a.Ensure the necessary configurations are set in your application
+
+b.Modify context.xml in Tomcat if you need to change the default settings
+
+c.edit the manager and host manager to deploy or host application
+
 
 
 
