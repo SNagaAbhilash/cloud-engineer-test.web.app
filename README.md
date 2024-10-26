@@ -75,7 +75,7 @@ note:
       2.after building the application it will create a directory called "target" inside ot will create WAR OR JAR FILE.
 
 6.INSTALL APACHE TOMCAT TO DEPLOY OR HOST JAVA BASED APPLICATIONS:
-
+------------------------------------------------------------------------------------------------------------------------------------
 a.to install tomcat to the ec2 instance use :-
        
        wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz  (tomcat 9 version)
@@ -87,7 +87,15 @@ b.after installing the tomcat we have to unzip the file so use:-
 
 7.START THE TOMCAT SERVER:
 ---------------------------------------------------------------------------------------------------------------------------------------
-go to the tomcat in the tomcat we have lot of files and floders so go to the bin folder and start the server- ./startup.sh
+go to the tomcat in the tomcat we have lot of files and floders
+
+change to the bin folder by giving :
+    
+            cd bin/
+
+in bin folder we have lot of configuration files so start the server by giving the command:- 
+          
+          ./startup.sh
 
 Configure security group settings to allow inbound traffic on port 8080(tomcat port number) (HTTP).
 ----------------------------------------------------------------------------------------------
