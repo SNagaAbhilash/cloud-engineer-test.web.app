@@ -132,11 +132,23 @@ e.by opening the tomcat server we have to edit conf/tomcat-users.xml and give us
 
              sudo vi tomcat-users.xml
 
-  in that give manager gui permsisions:-
+  in that give single user permsisions to enter into the tomcat phase:-
 
                     <role rolename="manager-gui"/>
            <user username="tomcat" password="abhilash" roles="manager-gui"/>
-   
+
+  so by changing these we can enter into the tomcat application manager dashboard by giving username and passwords
+
+
+9.DEPLOY THE APPLICATION:
+-------------------------------------------------------------------------------------------------------------------------------------------------
+1.The deployment directory of tomcat is webapps so we have to deploy or move the war file in the webapps to run the java based application go to the target dir.
+
+2.in the target we have to deploy or move the WAR file to the webapps by giving:
+
+       sudo cp -r  WebCalculator-1.0-SNAPSHOT.war /home/ec2-user//apache-tomcat-9.0.96/webapps
+
+3.again restart the server we can get the application.
 
            
 
