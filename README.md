@@ -46,15 +46,15 @@ open your instance and connect using SSH client:
 
 3.INSTALL JAVA,MAVEN AND GIT in your AWS EC2 INSTANCE:
 -------------------------------------------------------------------------------------------------------------------------------
-a.install java by giving:- 
+1.Install java by giving:- 
 
           sudo yum -y install java-11*
 
-to check java version:
+  check java version:
 
           java --version
 
-b.install maven (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file):-
+2.install maven (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file):-
 
          sudo yum -y install maven
 
@@ -62,14 +62,18 @@ to check maven version:
 
            mvn -v
 
-c.sudo yum - y install git (to clone pre -existing application or to use git based commands in the instance):
+3.install git and clone pre -existing application or to use git based commands in the instance):
 
-         "git clone https://github.com/username/yourrepository.git")
+         sudo yum -y install git
+
+         "git clone https://github.com/username/yourrepository.git"
 
 
-4.GO THE DIRECTORY:
+4.CHANGE THE DIRECTORY TO BUILD THE MAVEN LIFE CYCLE:
 -------------------------------------------------------------------------------------------------------------------------------
-a. 
+a. change the directory:-
+
+            cd simple web calculator
 
 
 5.BUILD THE APPLICATION USING THE MAVEN LIFE CYCLE:
