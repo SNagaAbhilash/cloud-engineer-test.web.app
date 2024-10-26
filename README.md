@@ -2,17 +2,19 @@ Objective: Deploy a basic web application using any platform or local server, us
 --------------------------------------------------------------------------------------------------------------------------------
 INTRODUCTION:
 --------------------------------------------------------------------------------------------------------------------------------
-This project is a simple Java web calculator application that can perform basic arithmetic operations. This README outlines the steps to deploy the application on an AWS EC2 instance.
+This project is a simple Java web calculator application that can perform basic arithmetic operations.This README outlines the steps to deploy the application on an AWS EC2 instance.
 
 Prerequisites
 --------------------------------------------------------------------------------------------------------------------------------
 Before you begin, ensure you have the following:
 
-1.Any aws account
+1.Aws account: sign up at aws account
 
-2.Java Development Kit (JDK) installed locally in the server(supports java based applications)
+2.Java Development Kit (JDK)(supports java based applications version 8 or higher)
 
-3.Apache Maven installed locally (for building the project)
+3.Apache Maven installed locally (for building the JAVA languages)
+
+4.Git (For cloning the repository).
 
 Deployment Steps:
 --------------------------------------------------------------------------------------------------------------------------------
@@ -26,13 +28,15 @@ Deployment Steps:
 
 5.Select an instance type (e.g., t2.micro for free tier).
 
-6.Configure security group:
+6.create vpc or you can use default vpc and subnets
+
+7.Configure security group:
    Add a rule to allow SSH (port 22) from your IP.
-   Add a rule to allow traffic on the port your application will run (e.g., port 8080).
+   Add a rule to allow traffic on the port your application will run (e.g., port 8080 for tomcat).
 
-7.Review and launch the instance.
+8.Review and launch the instance.
 
-8.Download the key pair (e.g., my-key.pem) when prompted.
+9.Download the key pair (e.g., my-key.pem) when prompted.
 
 
 
@@ -52,9 +56,9 @@ open your instance and connect using SSH client:
 
   check java version:
 
-          java --version
+          java -version
 
-2.install maven (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file):-
+2.Install maven (to build the java based applications we need pom.xml file which is present in java based applications, acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file):-
 
          sudo yum -y install maven
 
@@ -62,18 +66,20 @@ to check maven version:
 
            mvn -v
 
-3.install git and clone pre -existing application or to use git based commands in the instance):
+3.Install git (To clone pre-existing application or to use git based commands in the instance):
 
-         sudo yum -y install git
+        -> sudo yum -y install git
 
-         "git clone https://github.com/username/yourrepository.git"
+        -> "git clone https://github.com/username/yourrepository.git"
 
 
 4.CHANGE THE DIRECTORY TO BUILD THE MAVEN LIFE CYCLE:
 -------------------------------------------------------------------------------------------------------------------------------
-a. change the directory:-
+a. To change the directory:-
 
-            cd simple web calculator
+            cd simplewebcalculator(directory name)
+
+   beacuse it contains pom.xml.without pom.xml we cant build using maven.
 
 
 5.BUILD THE APPLICATION USING THE MAVEN LIFE CYCLE:
@@ -90,53 +96,54 @@ note:
 
       1.the errors we get while building the application is plugins and versions hence we have to update the plugins and versions
 
-      2.after building the application it will create a directory called "target" inside ot will create WAR OR JAR FILE.
+      2.after building the application it will create a directory called "target" inside it will create WAR OR JAR FILE.
 
 6.INSTALL APACHE TOMCAT TO DEPLOY OR HOST JAVA BASED APPLICATIONS:
 ------------------------------------------------------------------------------------------------------------------------------------
-a.to install tomcat to the ec2 instance use :-
+a.to install tomcat from google to the ec2 instance use :-
        
        wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz  (tomcat 9 version)
 
-b.after installing the tomcat we have to unzip the file so use:- 
+b.after installing the tomcat we have to unzip the tar file so use:- 
 
          tar -xvf  apache-tomcat-9.0.96.tar.gz
 
 
 7.START THE TOMCAT SERVER:
 ---------------------------------------------------------------------------------------------------------------------------------------
-go to the tomcat in the tomcat we have lot of files and floders
+Go to the tomcat in the tomcat we have lot of files and folders
 
 change to the bin folder by giving :
     
             cd bin/
 
-in bin folder we have lot of configuration files so start the server by giving the command:- 
+in bin folder we have lot of configuration files so start or run the configuration file we use:- 
           
           ./startup.sh
 
-Configure security group settings to allow inbound traffic on port 8080(tomcat port number) (HTTP).
+8.Configure security group settings to allow inbound traffic on port 8080(tomcat port number).
 ----------------------------------------------------------------------------------------------
-note:use public ip adress of the instance to open the tomcat page:- 
+1.we are using public ip adress of the instance to open the tomcat page:- 
 
             https://3.27.90.92:8080
 
+2.Ater giving ip address we can see the tomcat page in that we have to go to the manager app as it is a web application that is packaged with tomcat server in that only we can see all the
+  
+applications that we are deployed
 
-8.Configuration:
---------------------------------------------------------------------------------------------------------------------------
-a.Ensure the necessary configurations are set in your application
+3.Ensure the necessary configurations are set in your application
 
-b.Modify context.xml in Tomcat if you need to change the default settings 
+4.Modify context.xml available in managers in Tomcat to deploy application, you need to change the default settings 
 
-c.edit the manager and host manager to deploy or host java based application(give permissions):-
+5.edit the manager and host manager to deploy or host java based application(give permissions):-
 
             sudo vi /home/ec2-user/apache-tomcat-9.0.96/webapps/host-manager/META-INF/context.xml
 
             sudo vi /home/ec2-user/apache-tomcat-9.0.96/webapps/manager/META-INF/context.xml
 
-d.after giving permsions go to the bin folder and restart the tomcat server.
+6.after giving permsions go to the bin folder and restart the configuration file.
 
-e.by opening the tomcat server we have to edit conf/tomcat-users.xml and give user permissions 
+7.by opening the tomcat server we have to edit conf/tomcat-users.xml and give credentials to use webapp(it is a deployment directory for tomcat) 
  
   so go to the user conf folder and edit tomcat-users.xml :-
 
@@ -147,18 +154,22 @@ e.by opening the tomcat server we have to edit conf/tomcat-users.xml and give us
                     <role rolename="manager-gui"/>
            <user username="tomcat" password="abhilash" roles="manager-gui"/>
 
-  so by changing these we can enter into the tomcat application manager dashboard by giving username and passwords
+  so by changing these we can enter into the tomcat web application manager dashboard by giving username and passwords which we have given in the tomcat-users.xml
 
 
 9.DEPLOY THE APPLICATION:
 -------------------------------------------------------------------------------------------------------------------------------------------------
-1.The deployment directory of tomcat is webapps so we have to deploy or move the war file in the webapps to run the java based application go to the target dir.
+1.The deployment directory of tomcat is webapps so we have to deploy or move the war file in the webapps,so to run the java based application go to the target dir.
 
-2.in the target we have to deploy or move the WAR file to the webapps by giving:
+2.in the target dir which is present in tomcat we have to deploy or move the WAR file to the webapps by giving:
 
        sudo cp -r  WebCalculator-1.0-SNAPSHOT.war /home/ec2-user//apache-tomcat-9.0.96/webapps
 
-3.again restart the server we can get the application in the dashboard.
+3.Again restart the configuration file (./startup.sh) in the bin folder in tomcat we can get the application that has been deployed in the dashboard.
+
+
+10.USING ELASTIC IP TO THE INSTANCE TO RUN 24/7:
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 
            
