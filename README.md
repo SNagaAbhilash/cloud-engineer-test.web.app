@@ -44,14 +44,18 @@ a.sudo yum -y install java-11* (supports java based applications)
 
 b.sudo yum -y install maven  (to build the java based applications we need pom.xml file which is present in java based applications only acts as meta data and by builiding the applications it provides artifacts WAR(deployment purpose,JAR(testing purpose) file)
 
-to check maven version-  mvn -v
+to check maven version:
 
-c.sudo yum - y install git (to clone pre -existing application- "git clone https://github.com/username/yourrepository.git")
+           mvn -v
+
+c.sudo yum - y install git (to clone pre -existing application:
+
+         "git clone https://github.com/username/yourrepository.git")
 
 
 4.GO THE DIRECTORY:
 -------------------------------------------------------------------------------------------------------------------------------
-a. cd directoryname
+a. 
 
 
 5.BUILD THE APPLICATION USING THE MAVEN LIFE CYCLE:
@@ -72,9 +76,13 @@ note:
 
 6.INSTALL APACHE TOMCAT TO DEPLOY OR HOST JAVA BASED APPLICATIONS:
 
-a.to install tomcat to the ec2 instance use - wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz  (tomcat 9 version)
+a.to install tomcat to the ec2 instance use :-
+       
+       wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.96/bin/apache-tomcat-9.0.96.tar.gz  (tomcat 9 version)
 
-b.after installing the tomcat we have to unzip the file so use- tar -xvf  apache-tomcat-9.0.96.tar.gz
+b.after installing the tomcat we have to unzip the file so use:- 
+
+         tar -xvf  apache-tomcat-9.0.96.tar.gz
 
 
 7.START THE TOMCAT SERVER:
@@ -83,7 +91,9 @@ go to the tomcat in the tomcat we have lot of files and floders so go to the bin
 
 Configure security group settings to allow inbound traffic on port 8080(tomcat port number) (HTTP).
 ----------------------------------------------------------------------------------------------
-note:use public ip adress of the instance to open the tomcat page- https://3.27.90.92:8080
+note:use public ip adress of the instance to open the tomcat page:- 
+
+            https://3.27.90.92:8080
 
 
 8.Configuration:
