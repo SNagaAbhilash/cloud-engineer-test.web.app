@@ -62,7 +62,8 @@ c.mvn test-to check if the application is converted to machine readable
 
 d.mvn package- it will build the application and convert into WAR or JAR file.
 
-note: 1.the errors we get while building the application is plugins and versions hence we have to update the plugins and versions
+note: 
+      1.the errors we get while building the application is plugins and versions hence we have to update the plugins and versions
 
       2.after building the application it will create a directory called "target" inside ot will create WAR OR JAR FILE.
 
