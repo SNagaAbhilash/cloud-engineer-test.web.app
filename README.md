@@ -4,6 +4,7 @@ INTRODUCTION:This project is a simple Java web calculator application that can p
 
 Prerequisites
 Before you begin, ensure you have the following:
+
 1.Any aws account
 
 2.Java Development Kit (JDK) installed locally in the server(supports java based applications)
@@ -11,11 +12,28 @@ Before you begin, ensure you have the following:
 3.Apache Maven installed locally (for building the project)
 
 Deployment Steps:
+
 1. Launch an EC2 Instance
-Log in to your AWS Management Console.
-Navigate to the EC2 dashboard and click on "Launch Instance."
-Choose an Amazon Machine Image (AMI). (e.g., Amazon Linux, Ubuntu Server)
-Select an instance type (e.g., t2.micro for free tier).
-Configure security group settings to allow inbound traffic on port 80 (HTTP).
-Launch the instance and download the key pair for SSH access.
+   
+a.Log in to your AWS Management Console.
+
+b.Navigate to the EC2 dashboard and click on "Launch Instance."
+
+c.Choose an Amazon Machine Image (AMI). (e.g., Amazon Linux, Ubuntu Server)
+
+d.Select an instance type (e.g., t2.micro for free tier).
+
+e.Configure security group settings to allow inbound traffic on port 80 (HTTP).
+
+f.Launch the instance and download the key pair for SSH access.
+
+
+
+
+
+
+
+
+
+
 
