@@ -158,7 +158,8 @@ e.by opening the tomcat server we have to edit conf/tomcat-users.xml and give us
 
        sudo cp -r  WebCalculator-1.0-SNAPSHOT.war /home/ec2-user//apache-tomcat-9.0.96/webapps
 
-3.again restart the server we can get the application.
+3.again restart the server we can get the application in the dashboard.
+
 
            
 
