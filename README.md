@@ -18,17 +18,23 @@ Deployment Steps:
 --------------------------------------------------------------------------------------------------------------------------------
 1.LAUNCH AN EC2 INSTANCE
    
-a.Log in to your AWS Management Console.
+2.Log in to your AWS Management Console.
 
-b.Navigate to the EC2 dashboard and click on "Launch Instance."
+3.Navigate to the EC2 dashboard and click on "Launch Instance."
 
-c.Choose an Amazon Machine Image (AMI). (e.g., Amazon Linux)
+4.Choose an Amazon Machine Image (AMI). (e.g., Amazon Linux)
 
-d.Select an instance type (e.g., t2.micro for free tier).
+5.Select an instance type (e.g., t2.micro for free tier).
 
-e.Configure security group settings to allow inbound traffic on port 80 (HTTP).
+6.Configure security group:
+   Add a rule to allow SSH (port 22) from your IP.
+   Add a rule to allow traffic on the port your application will run (e.g., port 8080).
 
-f.Launch the instance and download the key pair for SSH access.
+7.Review and launch the instance.
+
+8.Download the key pair (e.g., my-key.pem) when prompted.
+
+
 
 
 2.CONNECT TO EC2 INSTANCE:
