@@ -77,7 +77,7 @@ to check maven version:
 -------------------------------------------------------------------------------------------------------------------------------
 a. To change the directory:-
 
-            cd simplewebcalculator(directory name)
+            cd directory name
 
    beacuse it contains pom.xml.without pom.xml we cant build using maven.
 
