@@ -189,7 +189,7 @@ Allocate a New Elastic IP: Click the Allocate Elastic IP address button.
 select your running Tomcat instance from the drop-down menu and give private ip address of the instance
 
 In your web browser, enter the Elastic IP address followed by the Tomcat port
-                          ( http://<your-elastic-ip>:8080).
+                          
 
 Conclusion
 -------------------------------------------------------------------------------------------------------------------------
