@@ -123,7 +123,14 @@ in bin folder we have lot of configuration files so start or run the configurati
 
 8.Configure security group settings to allow inbound traffic on port 8080(tomcat port number).
 ----------------------------------------------------------------------------------------------
-1.we are using public ip adress of the instance to open the tomcat page:- 
+1. Configure Security Group
+ Edit Inbound Rules:
+In the security group click on the Inbound rules in the tab and then click Edit inbound rules.
+Add a rule to allow traffic:
+Protocol: TCP
+Port Range: 8080 (or the port your Tomcat server is running on, typically 8080)
+Source: Anywhere (0.0.0.0/0) for public access, or restrict to a specific IP range as needed
+we are using public ip adress of the instance to open the tomcat page:- 
 
             https://3.27.90.92:8080
 
@@ -170,48 +177,14 @@ applications that we are deployed
 
 10.USING ELASTIC IP TO THE INSTANCE TO RUN 24/7:
 -------------------------------------------------------------------------------------------------------------------------------------------------
-Step 1: TO Allocate an Elastic IP Address
-Log in to the AWS Management Console:
-Go to AWS Management Console.
-Navigate to the EC2 Dashboard:
-
+1.TO Allocate an Elastic IP Address go to the ec2 dashboard we can see elastic ip option
 Click on Services in the top menu.
-Under the Compute section, select EC2.
-Access Elastic IPs:
+Allocate a New Elastic IP: Click the Allocate Elastic IP address button.
 
-In the left sidebar, find the Network & Security section and click on Elastic IPs. 
-Allocate a New Elastic IP:
-Click the Allocate Elastic IP address button.
+2: Associate the Elastic Ip by choosing network border group and allocate the ip
 
-Step 2: Associate the Elastic IP with Your Tomcat Instance
-Select the Elastic IP:
-In the Elastic IPs section, find the Elastic IP you just allocated.
-Associate the Elastic IP:
-Select the Elastic IP address and click on the Actions button.
-Choose Associate Elastic IP address from the dropdown menu.
-Select Your Instance:
-select your running Tomcat instance from the drop-down menu.
-Confirm the Association:
-Click Associate to link the Elastic IP to your instance.
-
-Step 3: Configure Security Group
-To allow traffic to your Tomcat application, ensure your instance's security group is configured properly.
-
-Access Security Groups:
-
-In the EC2 Dashboard, click on Security Groups in the left sidebar.
-Select the Appropriate Security Group:
-
-Find and select the security group associated with your Tomcat instance.
-
-Edit Inbound Rules:
-
-Click on the Inbound rules tab and then click Edit inbound rules.
-Add a rule to allow traffic:
-Type: Custom TCP Rule
-Protocol: TCP
-Port Range: 8080 (or the port your Tomcat server is running on, typically 8080)
-Source: Anywhere (0.0.0.0/0) for public access, or restrict to a specific IP range as needed.
+3.Associate the Elastic IP:Select the Elastic IP address and click on the Actions button.
+select your running Tomcat instance from the drop-down menu and give private ip address of the instance
 
 In your web browser, enter the Elastic IP address followed by the Tomcat port (e.g., http://<your-elastic-ip>:8080).
 
