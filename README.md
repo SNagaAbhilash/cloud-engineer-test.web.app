@@ -180,7 +180,7 @@ Click on Services in the top menu.
 Under the Compute section, select EC2.
 Access Elastic IPs:
 
-In the left sidebar, find the Network & Security section and click on Elastic IPs.
+In the left sidebar, find the Network & Security section and click on Elastic IPs. 
 Allocate a New Elastic IP:
 Click the Allocate Elastic IP address button.
 
