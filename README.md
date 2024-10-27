@@ -123,16 +123,18 @@ in bin folder we have lot of configuration files so start or run the configurati
 
 8.Configure security group settings to allow inbound traffic on port 8080(tomcat port number).
 ----------------------------------------------------------------------------------------------
-1. Configure Security Group
- Edit Inbound Rules:
-In the security group click on the Inbound rules in the tab and then click Edit inbound rules.
+1. Configure Security Group:In the security group click on the Inbound rules in the tab and then click Edit inbound rules.
 Add a rule to allow traffic:
+
 Protocol: TCP
+
 Port Range: 8080 (or the port your Tomcat server is running on, typically 8080)
+
 Source: Anywhere (0.0.0.0/0) for public access, or restrict to a specific IP range as needed
+
 we are using public ip adress of the instance to open the tomcat page:- 
 
-            https://3.27.90.92:8080
+              https://3.27.90.92:8080
 
 2.Ater giving ip address we can see the tomcat page in that we have to go to the manager app as it is a web application that is packaged with tomcat server in that only we can see all the
   
