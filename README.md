@@ -170,9 +170,8 @@ applications that we are deployed
 
 10.USING ELASTIC IP TO THE INSTANCE TO RUN 24/7:
 -------------------------------------------------------------------------------------------------------------------------------------------------
-Step 1: Allocate an Elastic IP Address
+Step 1: TO Allocate an Elastic IP Address
 Log in to the AWS Management Console:
-
 Go to AWS Management Console.
 Navigate to the EC2 Dashboard:
 
@@ -191,12 +190,10 @@ Associate the Elastic IP:
 Select the Elastic IP address and click on the Actions button.
 Choose Associate Elastic IP address from the dropdown menu.
 Select Your Instance:
-
-In the association dialog, select your running Tomcat instance from the drop-down menu.
-If your instance has multiple network interfaces, you may need to specify the private IP address (usually the default is fine).
+select your running Tomcat instance from the drop-down menu.
 Confirm the Association:
-
 Click Associate to link the Elastic IP to your instance.
+
 Step 3: Configure Security Group
 To allow traffic to your Tomcat application, ensure your instance's security group is configured properly.
 
@@ -206,6 +203,7 @@ In the EC2 Dashboard, click on Security Groups in the left sidebar.
 Select the Appropriate Security Group:
 
 Find and select the security group associated with your Tomcat instance.
+
 Edit Inbound Rules:
 
 Click on the Inbound rules tab and then click Edit inbound rules.
@@ -214,16 +212,12 @@ Type: Custom TCP Rule
 Protocol: TCP
 Port Range: 8080 (or the port your Tomcat server is running on, typically 8080)
 Source: Anywhere (0.0.0.0/0) for public access, or restrict to a specific IP range as needed.
-Click Save rules.
-Step 4: Access Your Web Application
-Open a Web Browser:
 
 In your web browser, enter the Elastic IP address followed by the Tomcat port (e.g., http://<your-elastic-ip>:8080).
-View Your Application:
 
-If everything is set up correctly, you should see your Tomcat web application.
 Conclusion
-By following these steps, you have successfully allocated an Elastic IP address and associated it with your Tomcat instance, making your web application publicly accessible. Share the Elastic IP address with users who need access to your application.
+-------------------------------------------------------------------------------------------------------------------------
+By following these steps, you have successfully depoly your java based web application suing tomcat sever and allocate an Elastic IP address and associated it with your Tomcat instance, making your web application publicly accessible.
 
            
 
